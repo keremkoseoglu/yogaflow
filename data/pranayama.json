@@ -1,0 +1,44 @@
+[
+  {
+    "category": "cleansing",
+    "opener": true,
+    "closer": false,
+    "pranayamas": ["Dhouti", "Anunasika", "Nadi Shodhana", "Nadi Shuddhi", "Swana"]
+  },
+  {
+    "category": "stimulant",
+    "opener": true,
+    "closer": false,
+    "pranayamas": ["Kapalabhati", "Ujjayi", "Antara Kumbhaka", "Bahya Kumbhaka", "Bastrika"]
+  },
+  {
+    "category": "cooling",
+    "opener": true,
+    "closer": false,
+    "pranayamas": ["Swana", "Sitali", "Seetkari"]
+  },
+  {
+    "category": "harmony",
+    "opener": true,
+    "closer": false,
+    "pranayamas": ["Savitri", "Vibhaga", "Sukha", "Mahat Yoga"]
+  },
+  {
+    "category": "refreshing",
+    "opener": true,
+    "closer": false,
+    "pranayamas": ["Sahita", "Pranava", "Surya", "Ujjayi", "Naga"]
+  },
+  {
+    "category": "binding",
+    "opener": true,
+    "closer": false,
+    "pranayamas": ["Maha Kumbhaka"]
+  },
+  {
+    "category": "enlightening",
+    "opener": false,
+    "closer": true,
+    "pranayamas": ["Maha Kumbhaka", "Saraswati Chalana", "Rechaka Vriddhi"]
+  }
+]

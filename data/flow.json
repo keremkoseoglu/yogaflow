@@ -1,0 +1,353 @@
+[
+	{
+		"name": "Chandra Namaskara",
+		"asanas": [
+			"Pranamasana",
+			"Ardha Chandrasana",
+			"Virabhadrasana 1",
+			"Trikonasana",
+			"Parsvottanasana",
+			"Virasana",
+			"Malasana",
+			"Virasana",
+			"Parsvottanasana",
+			"Trikonasana",
+			"Virabhadrasana 1",
+			"Ardha Chandrasana",
+			"Pranamasana"
+		]
+	},
+	{
+		"name": "Hip Opener",
+		"asanas": [
+			"Pristhasana",
+			"Rajakapotasana",
+			"Adho Mukha Kapotasana"
+		]
+	},
+	{
+		"name": "Marjari Bitil",
+		"asanas": ["Marjariasana", "Bitilasana"]
+	},
+	{
+		"name": "Scoliosis",
+		"asanas": [
+			"Scoliosis 1",
+			"Scoliosis 2",
+			"Scoliosis 3"
+		]
+	},
+	{
+		"name": "SYEK 01",
+		"asanas": [
+			"Dandasana",
+			"Meru Dandasana",
+			"Ardha Navasana",
+			"Navasana",
+			"Kurmasana",
+			"Baddha Upavista Konasana",
+			"Garbhasana",
+			"Marichyasana 2",
+			"Ushtrasana",
+			"Yastikasana"
+		]
+	},
+	{
+		"name": "SYEK 02",
+		"asanas": [
+			"Samasthiti Tadasana",
+			"Urdhva Hastasana",
+			"Hasta Uttanasana",
+			"Utkatasana",
+			"Ardha Uttanasana",
+			"Uttanasana",
+			"Parivrtta Utkatasana",
+			"Parvatasana",
+			"Urdhva Eka Pada Parvatasana",
+			"Chakrasana",
+			"Ardha Chakrasana"
+		]
+	},
+	{
+		"name": "SYEK 03",
+		"asanas": [
+			"Pranamasana",
+			"Eka Pada Pranamasana",
+			"Vrikshasana",
+			"Natarajasana",
+			"Virabhadrasana 3",
+			"Virabhadrasana 1",
+			"Parsvakonasana",
+			"Parivrtta Parsvakonasana",
+			"Baddha Parsvakonasana",
+			"Moordhasana"
+		]
+	},
+	{
+		"name": "SYEK 04",
+		"asanas": [
+			"Tadasana",
+			"Trikonasana",
+			"Parivrtta Trikonasana",
+			"Virabhadrasana 2",
+			"Urdhva Virabhadrasana",
+			"Utthita Parsvakonasana",
+			"Asta Vakrasana",
+			"Dhanurakarshasana",
+			"Matsya Kridasana",
+			"Santolanasana"
+		]
+	},
+	{
+		"name": "SYEK 05",
+		"asanas": [
+			"Tadasana",
+			"Dolasana",
+			"Ardha Uttanasana",
+			"Padahastasana",
+			"Uttanasana",
+			"Parsvottanasana",
+			"Urdhva Prasarita Padasana",
+			"Ardha Viruddha Phalankasana",
+			"Eka Pada Urdhva Viruddha Phalankasana",
+			"Viruddha Phalankasana"
+		]
+	},
+	{
+		"name": "SYEK 06",
+		"asanas": [
+			"Malasana",
+			"Upavesasana",
+			"Dandasana"
+		]
+	},
+	{
+		"name": "SYEK 06",
+		"asanas": [
+			"Dandasana",
+			"Ardha Paschimottanasana"
+		]
+	},
+	{
+		"name": "SYEK 07",
+		"asanas": [
+			"Ardha Paschimottanasana",
+			"Paschimottanasana",
+			"Maha Beddha Mudra"
+		]
+	},
+	{
+		"name": "SYEK 08",
+		"asanas": [
+			"Marichyasana 1",
+			"Marichyasana 2"
+		]
+	},
+	{
+		"name": "SYEK 09",
+		"asanas": [
+			"Ardha Matsyendrasana",
+			"Matsyendrasana"
+		]
+	},
+	{
+		"name": "SYEK 10",
+		"asanas": [
+			"Advasana",
+			"Ardha Dhanurasana",
+			"Dhanurasana"
+		]
+	},
+	{
+		"name": "SYEK 11",
+		"asanas": [
+			"Ardha Shalabhasana",
+			"Utthita Ardha Shalabhasana",
+			"Shalabhasana",
+			"Shashankasana"
+		]
+	},
+	{
+		"name": "SYEK 12",
+		"asanas": [
+			"Samasthiti Tadasana",
+			"Ardha Chandrasana",
+			"Tadasana",
+			"Chandrasana",
+			"Garudasana",
+			"Upavesasana",
+			"Malasana",
+			"Dandasana",
+			"Bakasana",
+			"Lolasana"
+		]
+	},
+	{
+		"name": "SYEK 13",
+		"asanas": [
+			"Sukhasana",
+			"Siddhasana",
+			"Ardha Paschimottanasana",
+			"Paschimottanasana",
+			"Maha Beddha Mudra",
+			"Marichyasana 1",
+			"Ardha Pavanmuktasana",
+			"Pavanmuktasana",
+			"Ardha Jathara Parivartasana",
+			"Jathara Parivartasana"
+		]
+	},
+	{
+		"name": "SYEK 14",
+		"asanas": [
+			"Vajrasana",
+			"Gomukhasana",
+			"Adho Mukha Gomukhasana",
+			"Vakrasana",
+			"Ardha Matsyendrasana",
+			"Matsyendrasana",
+			"Shavasana",
+			"Supta Utthita Eka Padangusthasana",
+			"Supta Eka Padangusthasana",
+			"Parivrtta Supta Eka Padangusthasana"
+		]
+	},
+	{
+		"name": "SYEK 15",
+		"asanas": [
+			"Anantasana",
+			"Viparita Karani Mudra",
+			"Sarvangasana",
+			"Halasana",
+			"Supta Padmasana",
+			"Simhasana",
+			"Swastikasana",
+			"Ardha Padmasana",
+			"Padmasana",
+			"Yoga Mudra"
+		]
+	},
+	{
+		"name": "SYEK 16",
+		"asanas": [
+			"Bhadrasana",
+			"Baddha Konasana",
+			"Adho Mukha Baddha Konasana",
+			"Baddha Upavista Konasana",
+			"Gorakshasana",
+			"Setubandhasana",
+			"Setu Bandha Sarvangasana",
+			"Matsyasana",
+			"Supta Baddha Matsyasana",
+			"Supta Baddha Konasana"
+		]
+	},
+	{
+		"name": "SYEK 17",
+		"asanas": [
+			"Ardha Dhanurasana",
+			"Dhanurasana",
+			"Ardha Shalabhasana",
+			"Utthita Ardha Shalabhasana",
+			"Shalabhasana",
+			"Sarpasana",
+			"Mayurasana",
+			"Dvi Pada Pitham",
+			"Supta Vajrasana",
+			"Shashankasana"
+		]
+	},
+	{
+		"name": "SYEK 18",
+		"asanas": [
+			"Rajakapotasana",
+			"Eka Pada Rajakapotasana",
+			"Adho Mukha Kapotasana",
+			"Pristhasana",
+			"Salamba Bhujangasana",
+			"Bhujangasana",
+			"Tiryaka Bhujangasana",
+			"Urdhva Mukha Svanasana",
+			"Ashtanga Namaskara",
+			"Shashankasana"
+		]
+	},
+	{
+		"name": "SYEK 19",
+		"asanas": [
+			"Makarasana 1",
+			"Makarasana 2",
+			"Ardha Marjariasana",
+			"Hanumanasana",
+			"Anjaneyasana",
+			"Aswa Sanchalanasana",
+			"Phalankasana",
+			"Parivrtta Anjaneyasana",
+			"Chaturanga Dandasana",
+			"Balasana"
+		]
+	},
+	{
+		"name": "Surya Chandra Namaskara",
+		"asanas": [
+			"Pranamasana",
+			"Hasta Uttanasana",
+			"Uttanasana",
+			"Dolasana",
+			"Aswa Sanchalanasana",
+			"Virasana",
+			"Ushtrasana",
+			"Parvatasana",
+			"Marjariasana",
+			"Shashankasana",
+			"Ashtanga Namaskara",
+			"Bhujangasana",
+			"Urdhva Mukha Svanasana",
+			"Parvatasana",
+			"Aswa Sanchalanasana",
+			"Virasana",
+			"Ushtrasana",
+			"Ardha Marjariasana",
+			"Uttanasana",
+			"Hasta Uttanasana",
+			"Pranamasana"
+		]
+	},
+	{
+		"name": "Surya Namaskara",
+		"asanas": [
+			"Pranamasana",
+			"Hasta Uttanasana",
+			"Uttanasana",
+			"Aswa Sanchalanasana",
+			"Parvatasana",
+			"Phalankasana",
+			"Chaturanga Dandasana",
+			"Urdhva Mukha Svanasana",
+			"Parvatasana",
+			"Aswa Sanchalanasana",
+			"Uttanasana",
+			"Hasta Uttanasana",
+			"Pranamasana"
+		]
+	},
+	{
+		"name": "Vinyasa",
+		"asanas": [
+			"Parvatasana",
+			"Phalankasana",
+			"Chaturanga Dandasana",
+			"Urdhva Mukha Svanasana",
+			"Parvatasana"
+		]
+	},
+	{
+		"name": "Virabhadra",
+		"asanas": [
+			"Virabhadrasana 1",
+			"Virabhadrasana 2",
+			"Urdhva Virabhadrasana",
+			"Virabhadrasana 3"
+		]
+	}
+]

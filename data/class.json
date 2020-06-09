@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Ofis Yogası",
+    "style": "chair",
+    "difficulty": "beginner",
+    "duration": 30
+  },
+  {
+    "name": "Hatha",
+    "style": "hatha",
+    "difficulty": "beginner",
+    "duration": 60
+  },
+  {
+    "name": "Yin",
+    "style": "yin",
+    "difficulty": "beginner",
+    "duration": 60
+  }
+]

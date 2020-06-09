@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f06eb028-7ebc-40de-932b-b2a78a34d53f" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/yogaflow$main.coverage" NAME="main Coverage Results" MODIFIED="1579342782370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1X1KxrQecC8aXK3ItbhEI8YMEda" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="yogaflow" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f06eb028-7ebc-40de-932b-b2a78a34d53f" name="Default Changelist" comment="" />
+      <created>1579086273897</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579086273897</updated>
+      <workItem from="1579086277380" duration="2807000" />
+      <workItem from="1579252323501" duration="368000" />
+      <workItem from="1579252863916" duration="2771000" />
+      <workItem from="1579341271844" duration="1525000" />
+      <workItem from="1580208411660" duration="72000" />
+      <workItem from="1580208576202" duration="31000" />
+      <workItem from="1580451403781" duration="242000" />
+      <workItem from="1580458553837" duration="342000" />
+      <workItem from="1580459505305" duration="3688000" />
+      <workItem from="1580703923315" duration="10000" />
+      <workItem from="1580725935897" duration="136000" />
+      <workItem from="1580729020059" duration="865000" />
+      <workItem from="1580731021337" duration="739000" />
+      <workItem from="1580805100001" duration="11000" />
+      <workItem from="1580815950452" duration="432000" />
+      <workItem from="1580817870742" duration="2098000" />
+      <workItem from="1580875116440" duration="2055000" />
+      <workItem from="1580886307372" duration="1147000" />
+      <workItem from="1580961198721" duration="2833000" />
+      <workItem from="1581048073869" duration="2276000" />
+      <workItem from="1581050510709" duration="17000" />
+      <workItem from="1581918833340" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1878" height="384" key="GridCell.Tab.0.bottom" timestamp="1581050451999">
+      <screen x="0" y="23" width="1920" height="1124" />
+    </state>
+    <state width="1878" height="384" key="GridCell.Tab.0.bottom/0.23.1920.1124@0.23.1920.1124" timestamp="1581050451999" />
+    <state width="1878" height="384" key="GridCell.Tab.0.center" timestamp="1581050451998">
+      <screen x="0" y="23" width="1920" height="1124" />
+    </state>
+    <state width="1878" height="384" key="GridCell.Tab.0.center/0.23.1920.1124@0.23.1920.1124" timestamp="1581050451998" />
+    <state width="1878" height="384" key="GridCell.Tab.0.left" timestamp="1581050451998">
+      <screen x="0" y="23" width="1920" height="1124" />
+    </state>
+    <state width="1878" height="384" key="GridCell.Tab.0.left/0.23.1920.1124@0.23.1920.1124" timestamp="1581050451998" />
+    <state width="1878" height="384" key="GridCell.Tab.0.right" timestamp="1581050451999">
+      <screen x="0" y="23" width="1920" height="1124" />
+    </state>
+    <state width="1878" height="384" key="GridCell.Tab.0.right/0.23.1920.1124@0.23.1920.1124" timestamp="1581050451999" />
+    <state width="1878" height="384" key="GridCell.Tab.1.bottom" timestamp="1581050452000">
+      <screen x="0" y="23" width="1920" height="1124" />
+    </state>
+    <state width="1878" height="384" key="GridCell.Tab.1.bottom/0.23.1920.1124@0.23.1920.1124" timestamp="1581050452000" />
+    <state width="1878" height="384" key="GridCell.Tab.1.center" timestamp="1581050452000">
+      <screen x="0" y="23" width="1920" height="1124" />
+    </state>
+    <state width="1878" height="384" key="GridCell.Tab.1.center/0.23.1920.1124@0.23.1920.1124" timestamp="1581050452000" />
+    <state width="1878" height="384" key="GridCell.Tab.1.left" timestamp="1581050451999">
+      <screen x="0" y="23" width="1920" height="1124" />
+    </state>
+    <state width="1878" height="384" key="GridCell.Tab.1.left/0.23.1920.1124@0.23.1920.1124" timestamp="1581050451999" />
+    <state width="1878" height="384" key="GridCell.Tab.1.right" timestamp="1581050452000">
+      <screen x="0" y="23" width="1920" height="1124" />
+    </state>
+    <state width="1878" height="384" key="GridCell.Tab.1.right/0.23.1920.1124@0.23.1920.1124" timestamp="1581050452000" />
+    <state x="1115" y="417" key="com.intellij.ide.util.TipDialog" timestamp="1581050510887">
+      <screen x="0" y="23" width="1920" height="1124" />
+    </state>
+    <state x="1115" y="417" key="com.intellij.ide.util.TipDialog/0.23.1920.1124@0.23.1920.1124" timestamp="1581050510887" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/generator/primal_generator.py</url>
+          <line>102</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/yogaflow$main.coverage" NAME="main Coverage Results" MODIFIED="1581050417081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
