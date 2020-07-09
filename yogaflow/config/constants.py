@@ -1,7 +1,7 @@
 """ Module for global constants """
 
 # File system
-DATA_DIR_PATH = "/Users/kerem/Dropbox/Software/Kerem/Development/yogaflow/data/"
+DATA_DIR_PATH = "/Users/kerem/Documents/Software/Kerem/Development/yogaflow/data/"
 DATA_FILE_EXTENSION = "json"
 DOWNLOAD_DIR = "/Users/kerem/Downloads/"
 
