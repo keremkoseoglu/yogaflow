@@ -2,7 +2,7 @@
 from typing import List
 from yogaflow.yoga.yoga_flow import YogaFlow
 from yogaflow.yoga.yoga_style import YogaStyle
-from yogaflow.yoga.asana import AsanaDifficulty, Asana
+from yogaflow.yoga.asana import AsanaDifficulty
 from yogaflow.yoga.pranayama import Pranayama
 from yogaflow.yoga.meditation import Meditation
 from yogaflow.yoga.warmup import WarmUp

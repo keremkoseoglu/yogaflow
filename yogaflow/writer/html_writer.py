@@ -1,9 +1,9 @@
 """ HTML output module """
 import os
 from typing import List
+from yogaflow import config
 from yogaflow.writer.abstract_writer import AbstractWriter
 from yogaflow.yoga.yoga_class import YogaClass
-from yogaflow.config.constants import DOWNLOAD_DIR
 from yogaflow.yoga.pranayama import Pranayama
 
 
@@ -17,13 +17,14 @@ class HtmlWriter(AbstractWriter): #pylint: disable=R0903
         self._html = ""
         self._html_file = ""
         self._yoga_class = YogaClass()
+        self._config = config.get()
 
     def write(self, generated_class: YogaClass):
         """ HTML generation entry point """
         self._yoga_class = generated_class
 
         self._html_file = os.path.join(
-            DOWNLOAD_DIR,
+            self._config["DOWNLOAD_DIR"],
             self._yoga_class.name.replace(" ", "_") + ".html")
 
         self._generate_html()
