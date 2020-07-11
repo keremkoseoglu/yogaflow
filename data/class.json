@@ -3,18 +3,24 @@
     "name": "Ofis Yogası",
     "style": "chair",
     "difficulty": "beginner",
-    "duration": 30
+    "duration": 30,
+    "asana_duration": 0.5,
+    "sequence": ["seated"]
   },
   {
     "name": "Hatha",
     "style": "hatha",
     "difficulty": "beginner",
-    "duration": 60
+    "duration": 60,
+    "asana_duration": 0.5,
+    "sequence": ["standing", "seated", "lying"]
   },
   {
     "name": "Yin",
     "style": "yin",
     "difficulty": "beginner",
-    "duration": 60
+    "duration": 60,
+    "asana_duration": 2,
+    "sequence": ["seated", "lying"]
   }
 ]

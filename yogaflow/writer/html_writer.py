@@ -32,11 +32,14 @@ class HtmlWriter(AbstractWriter): #pylint: disable=R0903
         self._display_file()
 
     def _asanas(self):
-        self._html += "<b>Asanas: </b>"
-        for asa in self._yoga_class.asanas:
-            if asa != self._yoga_class.asanas[0]:
-                self._html += ", "
-            self._html += asa.name
+        for flow in self._yoga_class.asanas:
+            if flow.name != self._yoga_class.asanas[0].name:
+                self._html += "<br>"
+            self._html += "<b>" + str(flow.name).split(".")[1] + "</b>: "
+            for asa in flow.asanas:
+                if asa.name != flow.asanas[0].name:
+                    self._html += ", "
+                self._html += asa.name
 
     def _begin_html(self):
         self._html = "<html><head>"

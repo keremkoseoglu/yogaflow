@@ -33,16 +33,15 @@ def str_to_asana_difficulty(name: str) -> AsanaDifficulty:
     """ Converts a string to asana difficulty enum """
     if name == AsanaDifficulty.beginner.name:
         return AsanaDifficulty.beginner
-    if name == AsanaDifficulty.intermediate:
+    if name == AsanaDifficulty.intermediate.name:
         return AsanaDifficulty.intermediate
-    if name == AsanaDifficulty.advanced:
+    if name == AsanaDifficulty.advanced.name:
         return AsanaDifficulty.advanced
     return AsanaDifficulty.undefined
 
 
 class AsanaStance(Enum):
     """ Asana stance definitions """
-
     undefined = 0
     standing = 1
     seated = 2
@@ -55,7 +54,7 @@ def str_to_asana_stance(name: str) -> AsanaStance:
         return AsanaStance.standing
     if name == AsanaStance.seated.name:
         return AsanaStance.seated
-    if name == AsanaStance.lying:
+    if name == AsanaStance.lying.name:
         return AsanaStance.lying
     return AsanaStance.undefined
 

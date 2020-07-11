@@ -18,13 +18,11 @@ class JsonReader(AbstractReader):
     Reads data from JSON files.
     Sample JSON files can hopefully be found under /data
     """
-
     def __init__(self):
         self._config = config.get()
 
     def get_asanas(self) -> List[Asana]:
         """ Reads the asana JSON file from the disk and returns a list """
-
         output = []
         path = os.path.join(
             self._config["DATA_DIR_PATH"],
@@ -40,7 +38,7 @@ class JsonReader(AbstractReader):
             output.append(asana)
         return output
 
-    def get_flows(self) -> List[YogaFlow]:
+    def get_flows(self, asanas: List[Asana]) -> List[YogaFlow]:
         """ Reads the flow JSON file from the disk and returns a list """
         output = []
         path = os.path.join(
@@ -51,7 +49,13 @@ class JsonReader(AbstractReader):
         for flow_line in flow_json:
             yoga_flow = YogaFlow(p_name=flow_line["name"])
             for asana in flow_line["asanas"]:
-                yoga_flow.asanas.append(asana)
+                found = False
+                for candidate in asanas:
+                    if candidate.name == asana:
+                        yoga_flow.asanas.append(candidate)
+                        found = True
+                        break
+                assert found
             output.append(yoga_flow)
         return output
 
@@ -109,6 +113,10 @@ class JsonReader(AbstractReader):
             yoga_class = YogaClass(p_style=str_to_yoga_style(json_class["style"]),
                                    p_difficulty=str_to_asana_difficulty(json_class["difficulty"]),
                                    p_name=json_class["name"],
-                                   p_duration=json_class["duration"])
+                                   p_duration=json_class["duration"],
+                                   p_asana_duration=json_class["asana_duration"])
+            for sequence_name in json_class["sequence"]:
+                stance = str_to_asana_stance(sequence_name)
+                yoga_class.sequence.append(stance)
             output.append(yoga_class)
         return output

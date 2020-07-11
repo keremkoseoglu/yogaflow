@@ -2,21 +2,23 @@ from yogaflow.reader.json_reader import JsonReader
 from yogaflow.generator.primal_generator import PrimalGenerator
 from yogaflow.yoga.yoga_class import YogaClass
 from yogaflow.yoga.yoga_style import YogaStyle
-from yogaflow.yoga.asana import AsanaDifficulty
+from yogaflow.yoga.asana import AsanaDifficulty, AsanaStance
 from yogaflow.writer.html_writer import HtmlWriter
 
 yoga_class = YogaClass(
     p_name="Test class",
     p_style=YogaStyle.hatha,
     p_difficulty=AsanaDifficulty.advanced,
-    p_duration=60)
+    p_duration=60,
+    p_asana_duration=2,
+    p_sequence=[AsanaStance.standing, AsanaStance.seated, AsanaStance.lying])
 
 reader = JsonReader()
 classes = reader.get_yoga_classes()
 pranayamas = reader.get_pranayamas()
 warmups = reader.get_warmups()
 asanas = reader.get_asanas()
-flows = reader.get_flows()
+flows = reader.get_flows(asanas)
 meditations = reader.get_meditations()
 
 generator = PrimalGenerator()

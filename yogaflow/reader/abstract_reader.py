@@ -20,7 +20,7 @@ class AbstractReader(ABC):
         """ Returns a list of asanas from the data source """
 
     @abstractmethod
-    def get_flows(self) -> List[YogaFlow]:
+    def get_flows(self, asanas: List[Asana]) -> List[YogaFlow]:
         """ Returns a list of flows from the data source """
 
     @abstractmethod
