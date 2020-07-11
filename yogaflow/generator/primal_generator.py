@@ -3,6 +3,7 @@ import copy
 from random import randint
 from typing import List
 from yogaflow.generator.abstract_generator import AbstractGenerator
+from yogaflow.generator.primal_asana_generator import PrimalAsanaGenerator
 from yogaflow.yoga.yoga_class import YogaClass
 from yogaflow.yoga.asana import Asana
 from yogaflow.yoga.yoga_flow import YogaFlow
@@ -75,18 +76,7 @@ class PrimalGenerator(AbstractGenerator): #pylint: disable=R0903
             p_source.remove(random_pranayama)
 
     def _generate_asanas(self):
-        # todo
-        # class'teki duration'a dikkat et
-        # asanas: List[YogaFlow] (flow ve asana ile dolacak, ayakta oturarak yatarak, en sonda shavasana var)
-        # - uygun flow: içindeki tüm asanalar bizim hedeflediğimiz türle ve zorlukla uyumlu olmalı (yoga_flow'da yardımcı yordamlar var)
-        # - flow varsa, bir flow çek ve oradaki asanaları normal asana listesinden sil işe onunla başla
-        # - kullandığın asanaları (flowdan da gelse sen de çeksen) tekrar kullanma
-        # - flow kullandıysan, flow içindeki asanaların hiç birini tekrar kullanma
-        # kullandıklarını sil
-        # class'teki duration'a dikkat et. bilhassa yin'de  uzun kalınıyor hatha'da kısa kalınıyor
-        # tamamla
-        # pass sil
-        pass
+        PrimalAsanaGenerator().generate(self._yoga_class, self._asanas, self._flows)
 
     def _generate_closing_pranayamas(self):
         PrimalGenerator._generate_pranayamas(

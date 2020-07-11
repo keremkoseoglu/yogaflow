@@ -9,5 +9,11 @@
     "PRANAYAMA_FILE": "pranayama",
     "WARMUP_FILE": "warmup",
     "GUI_CELL_HEIGHT": 30,
-    "GUI_CELL_WIDTH": 150
+    "GUI_CELL_WIDTH": 150,
+    "SECTION_PERCENTAGE": {
+        "PRANAYAMA": 20,
+        "WARMUP": 10,
+        "SHAVASANA": 10,
+        "MEDITATION": 10
+    }
 }
