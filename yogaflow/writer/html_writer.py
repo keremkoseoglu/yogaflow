@@ -33,58 +33,59 @@ class HtmlWriter(AbstractWriter): #pylint: disable=R0903
 
     def _asanas(self):
         for flow in self._yoga_class.asanas:
-            if flow.name != self._yoga_class.asanas[0].name:
-                self._html += "<br>"
-            self._html += "<b>" + str(flow.name).split(".")[1] + "</b>: "
+            self._open_section(str(flow.name).split(".")[1].capitalize())
             for asa in flow.asanas:
-                if asa.name != flow.asanas[0].name:
-                    self._html += ", "
-                self._html += asa.name
+                self._html += "<li>" + asa.name + "</li>"
+            self._close_section()
 
     def _begin_html(self):
         self._html = "<html><head>"
         self._html += "<style>"
-        self._html += "td { font-family: Arial; font-size: 30px; padding: 5px; }"
-        self._html += "tr:nth-child(even) { background: #CCC }"
-        self._html += "tr:nth-child(odd) {background: #FFF }"
+        self._html += ".check-list {margin: 0; padding-left: 1.2rem;} "
+        self._html += ".check-list li {position: relative; list-style-type: none; padding-left: 2.5rem; margin-bottom: 0.5rem;}"
+        self._html += ".check-list li:before {content: ''; display: block; position: absolute; "
+        self._html += "left: 0; top: -2px; width: 5px; height: 11px; border-width: 0 2px 2px 0; "
+        self._html += "border-style: solid; border-color: #00a8a8; transform-origin: bottom left; transform: rotate(45deg);} "
+        self._html += "*, *:before, *:after {box-sizing: border-box;} "
+        self._html += "html {-webkit-font-smoothing: antialiased; font-family: \"Helvetica Neue\", sans-serif; font-size: 62.5%;} "
+        self._html += "body {font-size: 1.6rem; background-color: #efefef; color: #324047} "
+        self._html += "html, body, section {height: 100%;} "
+        self._html += "section {max-width: 400px; margin-left: auto; margin-right: auto; display: flex; align-items: center;} "
+        self._html += "div {margin: auto;} "
         self._html += "</style>"
-        self._html += "</head><body>"
-
-    def _closing_pranayamas(self):
-        self._pranayamas("Closing Pranayamas", self._yoga_class.closing_pranayamas)
+        self._html += "</head><body><section><div>"
 
     def _display_file(self):
         os.system("open " + self._html_file)
 
     def _end_html(self):
-        self._html += "</body></html>"
+        self._html += "</div></section></body></html>"
 
     def _generate_html(self):
         self._begin_html()
-        self._html += "<h1>Preparation</h1>"
-        self._opening_pranayamas()
-        self._html += "<br>"
+
+        self._open_section("Opening Pranayamas")
+        self._pranayamas(self._yoga_class.opening_pranayamas)
+        self._close_section()
+
+        self._open_section("Warmups")
         self._warmups()
-        self._html += "<h1>Main Flow</h1>"
+        self._close_section()
+
         self._asanas()
-        self._html += "<h1>Closure</h1>"
-        self._closing_pranayamas()
-        self._html += "<br>"
-        self._meditation()
+
+        self._open_section("Closure")
+        self._pranayamas(self._yoga_class.closing_pranayamas)
+        self._close_section()
+
+        self._open_section("Meditation")
+        self._html += "<li>" + self._yoga_class.meditation.name + "</li>"
+        self._close_section()
         self._end_html()
 
-    def _meditation(self):
-        self._html += "<b>Meditation: </b>" + self._yoga_class.meditation.name
-
-    def _opening_pranayamas(self):
-        self._pranayamas("Opening Pranayamas", self._yoga_class.opening_pranayamas)
-
-    def _pranayamas(self, p_title: str, p_pranayamas: List[Pranayama]):
-        self._html += "<b>" + p_title + ": </b>"
+    def _pranayamas(self, p_pranayamas: List[Pranayama]):
         for pranayama in p_pranayamas:
-            if pranayama != p_pranayamas[0]:
-                self._html += ", "
-            self._html += pranayama.name
+            self._html += "<li>" + pranayama.name + "</li>"
 
     def _save_file(self):
         file2 = open(self._html_file, "w+")
@@ -92,10 +93,16 @@ class HtmlWriter(AbstractWriter): #pylint: disable=R0903
         file2.close()
 
     def _warmups(self):
-        self._html += "<b>Warmups: </b>"
         for warmup in self._yoga_class.warmups:
-            if warmup != self._yoga_class.warmups[0]:
-                self._html += ", "
-            self._html += warmup.name
+            self._html += "<li>" + warmup.name
             if warmup.description != "":
                 self._html += " <small><i>(" + warmup.description + ")</i></small>"
+            self._html += "</li>"
+
+    def _open_section(self, title: str):
+        self._html += "<h2>"
+        self._html += title
+        self._html += "</h2><ul class=\"check-list\">"
+
+    def _close_section(self):
+        self._html += "</ul>"
