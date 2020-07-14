@@ -4,7 +4,7 @@
     "style": "chair",
     "difficulty": "beginner",
     "duration": 30,
-    "asana_duration": 0.5,
+    "asana_duration": 2,
     "sequence": ["seated"]
   },
   {
@@ -12,7 +12,7 @@
     "style": "hatha",
     "difficulty": "beginner",
     "duration": 60,
-    "asana_duration": 0.5,
+    "asana_duration": 1,
     "sequence": ["standing", "seated", "lying"]
   },
   {
