@@ -16,6 +16,14 @@
     "sequence": ["standing", "seated", "lying"]
   },
   {
+    "name": "Home Hatha",
+    "style": "hatha",
+    "difficulty": "advanced",
+    "duration": 30,
+    "asana_duration": 1,
+    "sequence": ["standing", "seated", "lying"]
+  },
+  {
     "name": "Yin",
     "style": "yin",
     "difficulty": "beginner",
