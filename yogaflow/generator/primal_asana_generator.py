@@ -134,7 +134,7 @@ class PrimalAsanaGenerator:
         for asana in asanas:
             section.flow.asanas.append(asana)
             section.remaining_duration -= self._yoga_class.asana_duration
-            self._asana_is_used(asana)
+            self._asana_is_used(asana.name)
 
     def _asana_is_used(self, asana_name: str):
         deletable_asana_indices = []
