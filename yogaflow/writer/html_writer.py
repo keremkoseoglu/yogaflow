@@ -42,15 +42,15 @@ class HtmlWriter(AbstractWriter): #pylint: disable=R0903
         self._html = "<html><head>"
         self._html += "<style>"
         self._html += ".check-list {margin: 0; padding-left: 1.2rem;} "
-        self._html += ".check-list li {position: relative; list-style-type: none; padding-left: 2.5rem; margin-bottom: 0.5rem;}"
+        self._html += ".check-list li {position: relative; list-style-type: none; padding-left: 2.5rem; margin-bottom: 0.5rem;}"  # pylint: disable=C0301
         self._html += ".check-list li:before {content: ''; display: block; position: absolute; "
         self._html += "left: 0; top: -2px; width: 5px; height: 11px; border-width: 0 2px 2px 0; "
-        self._html += "border-style: solid; border-color: #00a8a8; transform-origin: bottom left; transform: rotate(45deg);} "
+        self._html += "border-style: solid; border-color: #00a8a8; transform-origin: bottom left; transform: rotate(45deg);} "  # pylint: disable=C0301
         self._html += "*, *:before, *:after {box-sizing: border-box;} "
-        self._html += "html {-webkit-font-smoothing: antialiased; font-family: \"Helvetica Neue\", sans-serif; font-size: 62.5%;} "
+        self._html += "html {-webkit-font-smoothing: antialiased; font-family: \"Helvetica Neue\", sans-serif; font-size: 62.5%;} "  # pylint: disable=C0301
         self._html += "body {font-size: 1.6rem; background-color: #efefef; color: #324047} "
         self._html += "html, body, section {height: 100%;} "
-        self._html += "section {max-width: 400px; margin-left: auto; margin-right: auto; display: flex; align-items: center;} "
+        self._html += "section {max-width: 400px; margin-left: auto; margin-right: auto; display: flex; align-items: center;} " # pylint: disable=C0301
         self._html += "div {margin: auto;} "
         self._html += "</style>"
         self._html += "</head><body><section><div>"
