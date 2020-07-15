@@ -105,7 +105,7 @@ class PrimalAsanaGenerator:
     def _build_flow_list(self, flows: List[YogaFlow]):
         self._flows = []
         for flow in flows:
-            if is_difficulty_higher(flow.get_highest_difficulty(), self._yoga_class.difficulty):
+            if is_difficulty_higher(self._yoga_class.difficulty, flow.get_highest_difficulty()):
                 continue
             if self._yoga_class.style not in flow.get_compatible_styles():
                 continue
@@ -114,7 +114,7 @@ class PrimalAsanaGenerator:
     def _build_asana_list(self, asanas: List[Asana]):
         self._asanas = []
         for asana in asanas:
-            if is_difficulty_higher(asana.difficulty, self._yoga_class.difficulty):
+            if is_difficulty_higher(self._yoga_class.difficulty, asana.difficulty):
                 continue
             if self._yoga_class.style not in asana.styles:
                 continue
