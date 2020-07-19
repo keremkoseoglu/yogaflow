@@ -50,6 +50,7 @@ class PrimalGenerator(AbstractGenerator): #pylint: disable=R0903
                              p_source: List[Pranayama],
                              p_target: List[Pranayama]):
 
+        p_target.clear()
         eligible_pranayama_candidates = []
 
         if p_location == PranayamaLocation.opener:
@@ -76,6 +77,7 @@ class PrimalGenerator(AbstractGenerator): #pylint: disable=R0903
             p_source.remove(random_pranayama)
 
     def _generate_asanas(self):
+        self._yoga_class.asanas.clear()
         PrimalAsanaGenerator().generate(self._yoga_class, self._asanas, self._flows)
 
     def _generate_closing_pranayamas(self):
@@ -100,6 +102,7 @@ class PrimalGenerator(AbstractGenerator): #pylint: disable=R0903
             p_target=self._yoga_class.opening_pranayamas)
 
     def _generate_warmups(self):
+        self._yoga_class.warmups.clear()
         for warmup_iteration in range(0, 5): #pylint: disable=W0612
             remaining_warmup_count = len(self._warmups)
             if remaining_warmup_count <= 0:
