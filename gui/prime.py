@@ -1,11 +1,13 @@
 """Primary GUI module"""
 from enum import Enum
+import subprocess
 from PyQt5.Qt import QHBoxLayout, QVBoxLayout, QWidget, QLabel, QComboBox # pylint: disable=E0611
 from yogaflow.reader.json_reader import JsonReader
 from yogaflow.reader.yoga_database import YogaDatabase
 from yogaflow.generator.primal_generator import PrimalGenerator
 from yogaflow.writer.html_writer import HtmlWriter
 from yogaflow.writer.img_html_writer import ImgHtmlWriter
+from yogaflow import config
 
 
 class Output(Enum):
@@ -47,14 +49,22 @@ class Prime(QWidget):
         output_layout.addWidget(output_label)
         output_layout.addWidget(output_combo)
 
+        edit_button = QLabel(self)
+        edit_button.setText("Edit")
+        edit_button.mousePressEvent = self._edit_clicked
+
         gen_button = QLabel(self)
         gen_button.setText("Generate")
         gen_button.mousePressEvent = self._generate_clicked
 
+        btn_layout = QHBoxLayout()
+        btn_layout.addWidget(edit_button)
+        btn_layout.addWidget(gen_button)
+
         main_layout = QVBoxLayout()
         main_layout.addLayout(class_layout)
         main_layout.addLayout(output_layout)
-        main_layout.addWidget(gen_button)
+        main_layout.addLayout(btn_layout)
         self.setLayout(main_layout)
         self.setWindowTitle("YogaFlow")
         self.show()
@@ -64,6 +74,10 @@ class Prime(QWidget):
 
     def _output_selected(self, i):
         self._selected_output_index = i
+
+    def _edit_clicked(self, event): # pylint: disable=W0613, R0201
+        data_path = config.get()["DATA_DIR_PATH"]
+        subprocess.call(["open", data_path])
 
     def _generate_clicked(self, event): # pylint: disable=W0613
         selected_class = self._yoga_db.classes[self._selected_class_index]
