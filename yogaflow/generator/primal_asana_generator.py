@@ -8,7 +8,7 @@ from enum import Enum
 from copy import copy
 from yogaflow import config
 from yogaflow.yoga.yoga_class import YogaClass
-from yogaflow.yoga.asana import Asana, is_difficulty_higher, AsanaStance
+from yogaflow.yoga.asana import Asana, is_difficulty_higher, AsanaStance, BendDirection
 from yogaflow.yoga.yoga_flow import YogaFlow
 
 
@@ -120,12 +120,33 @@ class PrimalAsanaGenerator:
                 continue
             self._asanas.append(asana)
 
-    def _append_random_asana(self, section: AsanaSection, usable_asanas: List[Asana]):
+    def _append_random_asana(self,
+                             section: AsanaSection,
+                             usable_asanas: List[Asana],
+                             counter_pose: bool = True):
         asana_index = randint(0, len(usable_asanas)-1)
         asana = usable_asanas[asana_index]
         section.flow.asanas.append(asana)
         section.remaining_duration -= self._yoga_class.asana_duration
         self._asana_is_used(asana.name)
+
+        if counter_pose:
+            if asana.bend_direction == BendDirection.forward:
+                self._append_random_bend_asana(section, usable_asanas, BendDirection.back)
+            if asana.bend_direction == BendDirection.back:
+                self._append_random_bend_asana(section, usable_asanas, BendDirection.forward)
+
+    def _append_random_bend_asana(self,
+                                  section: AsanaSection,
+                                  usable_asanas: List[Asana],
+                                  direction: BendDirection):
+        usable_asanas_in_direction = []
+        for asana in usable_asanas:
+            if asana.bend_direction == direction:
+                usable_asanas_in_direction.append(asana)
+        if len(usable_asanas_in_direction) <= 0:
+            return
+        self._append_random_asana(section, usable_asanas_in_direction, counter_pose=False)
 
     def _append_random_flow(self, section: AsanaSection, usable_flows: List[YogaFlow]):
         flow_index = randint(0, len(usable_flows)-1)
