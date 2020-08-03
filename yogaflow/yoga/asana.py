@@ -59,7 +59,26 @@ def str_to_asana_stance(name: str) -> AsanaStance:
     return AsanaStance.undefined
 
 
-class Asana: #pylint: disable=R0903
+class BendDirection(Enum):
+    """ Asana bend direction """
+    undefined = 0
+    forward = 1
+    back = 2
+    side = 3
+
+
+def str_to_bend_direction(name: str) -> BendDirection:
+    """ Converts a string to bend direction enum """
+    if name == BendDirection.back.name:
+        return BendDirection.back
+    if name == BendDirection.forward.name:
+        return BendDirection.forward
+    if name == BendDirection.side.name:
+        return BendDirection.side
+    return BendDirection.undefined
+
+
+class Asana: #pylint: disable=R0903, R0913
     """ Asana model class
     Data source of this class is by default /data/asana.json
     """
@@ -67,11 +86,14 @@ class Asana: #pylint: disable=R0903
                  p_name: str = "Undefined",
                  p_difficulty: AsanaDifficulty = AsanaDifficulty.undefined,
                  p_stance: AsanaStance = AsanaStance.undefined,
-                 p_styles: List[YogaStyle] = None):
+                 p_styles: List[YogaStyle] = None,
+                 p_bend_direction: BendDirection = BendDirection.undefined):
 
         self.name = p_name
         self.difficulty = p_difficulty
         self.stance = p_stance
+        self.bend_direction = p_bend_direction
+
         if p_styles is None:
             self.styles = []
         else:
