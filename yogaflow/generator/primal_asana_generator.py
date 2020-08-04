@@ -38,6 +38,7 @@ class PrimalAsanaGenerator:
         self._flows = List[YogaFlow]
         self._config = config.get()
         self._sections = List[AsanaSection]
+        self._reserved_asanas = {}
 
     def generate(self,
                  p_yoga_class: YogaClass,
@@ -96,7 +97,9 @@ class PrimalAsanaGenerator:
                 elif asset_type == AssetType.FLOW:
                     self._append_random_flow(section, usable_flows)
                 else:
-                    return
+                    break
+            if section.stance == AsanaStance.lying:
+                self._append_asana(section, self._reserved_asanas["Shavasana"])
 
     def _put_section_flows_to_output(self):
         for section in self._sections:
@@ -113,12 +116,16 @@ class PrimalAsanaGenerator:
 
     def _build_asana_list(self, asanas: List[Asana]):
         self._asanas = []
+        self._reserved_asanas = {}
         for asana in asanas:
             if is_difficulty_higher(self._yoga_class.difficulty, asana.difficulty):
                 continue
             if self._yoga_class.style not in asana.styles:
                 continue
-            self._asanas.append(asana)
+            if asana.name == "Shavasana":
+                self._reserved_asanas[asana.name] = asana
+            else:
+                self._asanas.append(asana)
 
     def _append_random_asana(self,
                              section: AsanaSection,
@@ -126,9 +133,7 @@ class PrimalAsanaGenerator:
                              counter_pose: bool = True):
         asana_index = randint(0, len(usable_asanas)-1)
         asana = usable_asanas[asana_index]
-        section.flow.asanas.append(asana)
-        section.remaining_duration -= self._yoga_class.asana_duration
-        self._asana_is_used(asana.name)
+        self._append_asana(section, asana)
 
         if counter_pose:
             if asana.bend_direction == BendDirection.forward:
@@ -153,9 +158,12 @@ class PrimalAsanaGenerator:
         flow = usable_flows[flow_index]
         asanas = copy(flow.asanas)
         for asana in asanas:
-            section.flow.asanas.append(asana)
-            section.remaining_duration -= self._yoga_class.asana_duration
-            self._asana_is_used(asana.name)
+            self._append_asana(section, asana)
+
+    def _append_asana(self, section: AsanaSection, asana: Asana):
+        section.flow.asanas.append(asana)
+        section.remaining_duration -= self._yoga_class.asana_duration
+        self._asana_is_used(asana.name)
 
     def _asana_is_used(self, asana_name: str):
         deletable_asana_indices = []
