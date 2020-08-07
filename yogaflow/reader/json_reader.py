@@ -4,7 +4,7 @@ import os
 from typing import List
 from yogaflow.reader.abstract_reader import AbstractReader
 from yogaflow.yoga.asana import Asana, str_to_asana_difficulty, \
-    str_to_asana_stance, str_to_bend_direction
+    str_to_asana_stance, str_to_bend_direction, str_to_face_direction
 from yogaflow.yoga.yoga_class import YogaClass
 from yogaflow.yoga.yoga_flow import YogaFlow
 from yogaflow.yoga.yoga_style import YogaStyle, str_to_yoga_style
@@ -31,10 +31,12 @@ class JsonReader(AbstractReader):
         with open(path) as asana_file:
             asana_json = json.load(asana_file)
         for asa in asana_json:
-            asana = Asana(p_name=asa["name"],
-                          p_difficulty=str_to_asana_difficulty(asa["difficulty"]),
-                          p_stance=str_to_asana_stance(asa["stance"]),
-                          p_bend_direction=str_to_bend_direction(asa["bend"]))
+            asana = Asana(
+                p_name=asa["name"],
+                p_difficulty=str_to_asana_difficulty(asa["difficulty"]),
+                p_stance=str_to_asana_stance(asa["stance"]),
+                p_bend_direction=str_to_bend_direction(asa["bend"]),
+                p_face_direction=str_to_face_direction(asa["face"]))
             for stance in asa["styles"]:
                 asana.styles.append(YogaStyle(str_to_yoga_style(stance)))
             output.append(asana)

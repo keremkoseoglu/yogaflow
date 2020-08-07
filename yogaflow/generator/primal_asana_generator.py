@@ -99,6 +99,7 @@ class PrimalAsanaGenerator:
                 else:
                     break
             if section.stance == AsanaStance.lying:
+                PrimalAsanaGenerator._sort_section_by_face(section)
                 self._append_asana(section, self._reserved_asanas["Shavasana"])
 
     def _put_section_flows_to_output(self):
@@ -212,4 +213,20 @@ class PrimalAsanaGenerator:
             if asana_match:
                 output.append(flow)
         return output
-        
+
+    @staticmethod
+    def _sort_section_by_face(section: AsanaSection):
+        face_asanas = {
+            "down": [],
+            "side": [],
+            "up": []
+        }
+
+        for asana in section.flow.asanas:
+            face_asanas[asana.face_direction.name].append(asana)
+
+        section.flow.asanas = []
+
+        for face in face_asanas:
+            for asana in face_asanas[face]:
+                section.flow.asanas.append(asana)

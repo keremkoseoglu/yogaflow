@@ -78,6 +78,23 @@ def str_to_bend_direction(name: str) -> BendDirection:
     return BendDirection.undefined
 
 
+class FaceDirection(Enum):
+    """ Asana face direction, especially meaningful on lying poses """
+    undefined = 0
+    down = 1
+    side = 2
+    up = 3
+
+def str_to_face_direction(name: str):
+    """ Converts a string to face direction """
+    if name == FaceDirection.down.name:
+        return FaceDirection.down
+    if name == FaceDirection.side.name:
+        return FaceDirection.side
+    if name == FaceDirection.up.name:
+        return FaceDirection.up
+    return FaceDirection.undefined
+
 class Asana: #pylint: disable=R0903, R0913
     """ Asana model class
     Data source of this class is by default /data/asana.json
@@ -87,12 +104,14 @@ class Asana: #pylint: disable=R0903, R0913
                  p_difficulty: AsanaDifficulty = AsanaDifficulty.undefined,
                  p_stance: AsanaStance = AsanaStance.undefined,
                  p_styles: List[YogaStyle] = None,
-                 p_bend_direction: BendDirection = BendDirection.undefined):
+                 p_bend_direction: BendDirection = BendDirection.undefined,
+                 p_face_direction: FaceDirection = FaceDirection.undefined):
 
         self.name = p_name
         self.difficulty = p_difficulty
         self.stance = p_stance
         self.bend_direction = p_bend_direction
+        self.face_direction = p_face_direction
 
         if p_styles is None:
             self.styles = []
