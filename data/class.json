@@ -24,6 +24,14 @@
     "sequence": ["standing", "seated", "lying"]
   },
   {
+    "name": "Home Yin",
+    "style": "yin",
+    "difficulty": "advanced",
+    "duration": 60,
+    "asana_duration": 2,
+    "sequence": ["seated", "lying"]
+  },
+  {
     "name": "Yin",
     "style": "yin",
     "difficulty": "beginner",

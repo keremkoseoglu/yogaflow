@@ -32,6 +32,8 @@ class PrimalAsanaGenerator:
     This is intended to be the only class in this module
     """
 
+    _ARDHA_PREFIX = "Ardha "
+
     def __init__(self):
         self._yoga_class = YogaClass()
         self._asanas = List[Asana]
@@ -98,6 +100,7 @@ class PrimalAsanaGenerator:
                     self._append_random_flow(section, usable_flows)
                 else:
                     break
+            PrimalAsanaGenerator._sort_ardha_before_main(section)
             if section.stance == AsanaStance.lying:
                 PrimalAsanaGenerator._sort_section_by_face(section)
                 self._append_asana(section, self._reserved_asanas["Shavasana"])
@@ -217,6 +220,7 @@ class PrimalAsanaGenerator:
     @staticmethod
     def _sort_section_by_face(section: AsanaSection):
         face_asanas = {
+            "undefined": [],
             "down": [],
             "side": [],
             "up": []
@@ -230,3 +234,37 @@ class PrimalAsanaGenerator:
         for face in face_asanas:
             for asana in face_asanas[face]:
                 section.flow.asanas.append(asana)
+
+    @staticmethod
+    def _sort_ardha_before_main(section: AsanaSection):
+        new_asanas = []
+        ardha_prefix_length = len(PrimalAsanaGenerator._ARDHA_PREFIX)
+        ardha_asana_index = -1
+
+        for ardha_asana in section.flow.asanas:
+            ardha_asana_index += 1
+
+            if ardha_asana in new_asanas:
+                continue
+
+            new_asanas.append(ardha_asana)
+
+            if ardha_asana.name[:ardha_prefix_length] != PrimalAsanaGenerator._ARDHA_PREFIX:
+                continue
+
+            main_asana_name = ardha_asana.name.replace(PrimalAsanaGenerator._ARDHA_PREFIX, "")
+            main_asana_index = -1
+            executable = False
+            for main_asana in section.flow.asanas:
+                main_asana_index += 1
+                if main_asana.name == main_asana_name:
+                    executable = True
+                    break
+
+            if not executable:
+                continue
+
+            main_asana = section.flow.asanas[main_asana_index]
+            new_asanas.append(main_asana)
+
+        section.flow.asanas = new_asanas
