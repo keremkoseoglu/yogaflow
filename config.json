@@ -15,5 +15,6 @@
         "WARMUP": 10,
         "SHAVASANA": 10,
         "MEDITATION": 10
-    }
+    },
+    "ASANA_IMG_STYLE": "height:100px;"
 }

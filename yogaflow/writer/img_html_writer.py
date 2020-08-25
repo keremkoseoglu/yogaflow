@@ -14,13 +14,14 @@ class ImageFinder:
 
     def __init__(self):
         self._img_root = os.path.join(os.getcwd(), "data", "img")
+        self._config = config.get()
 
     def get_image_code(self, asana: Asana, index: int) -> str:
         """ Returns the HTML code for the asana image """
         output = "<figure style='display:inline-block'>"
         output += "<img src='"
         output += self._get_image_path(asana)
-        output += "' style='height:150px;'>"
+        output += "' style='" + self._config["ASANA_IMG_STYLE"] + "'>"
         output += "<figcaption>(" + str(index) + ") " + asana.name + "</figcaption></figure>"
         return output
 
