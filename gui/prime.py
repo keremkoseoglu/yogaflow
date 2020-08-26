@@ -1,6 +1,7 @@
 """Primary GUI module"""
 from enum import Enum
 import subprocess
+from random import randint
 from PyQt5.Qt import QHBoxLayout, QVBoxLayout, QWidget, QLabel, QComboBox # pylint: disable=E0611
 from yogaflow.reader.json_reader import JsonReader
 from yogaflow.reader.yoga_database import YogaDatabase
@@ -35,6 +36,8 @@ class Prime(QWidget):
         class_combo.currentIndexChanged.connect(self._class_selected)
         for yoga_class in self._yoga_db.classes:
             class_combo.addItem(yoga_class.name)
+        if len(self._yoga_db.classes) > 0:
+            class_combo.setCurrentIndex(randint(0, len(self._yoga_db.classes)-1))
         class_layout = QHBoxLayout()
         class_layout.addWidget(class_label)
         class_layout.addWidget(class_combo)
