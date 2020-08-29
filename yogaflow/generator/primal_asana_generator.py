@@ -6,6 +6,7 @@ from typing import List
 from random import randint
 from enum import Enum
 from copy import copy
+import uuid
 from yogaflow import config
 from yogaflow.yoga.yoga_class import YogaClass
 from yogaflow.yoga.asana import Asana, is_difficulty_higher, AsanaStance, BendDirection
@@ -154,6 +155,10 @@ class PrimalAsanaGenerator:
             if asana.bend_direction == direction:
                 usable_asanas_in_direction.append(asana)
         if len(usable_asanas_in_direction) <= 0:
+            for used_asana in section.flow.asanas:
+                if used_asana.bend_direction == direction:
+                    usable_asanas_in_direction.append(used_asana)
+        if len(usable_asanas_in_direction) <= 0:
             return
         self._append_random_asana(section, usable_asanas_in_direction, counter_pose=False)
 
@@ -237,34 +242,51 @@ class PrimalAsanaGenerator:
 
     @staticmethod
     def _sort_ardha_before_main(section: AsanaSection):
+        old_asanas = []
+        for asana in section.flow.asanas:
+            guided_asana = {
+                "guid": uuid.uuid1(),
+                "asana": asana
+            }
+            old_asanas.append(guided_asana)
+
         new_asanas = []
         ardha_prefix_length = len(PrimalAsanaGenerator._ARDHA_PREFIX)
-        ardha_asana_index = -1
+        old_asana_index = -1
 
-        for ardha_asana in section.flow.asanas:
-            ardha_asana_index += 1
+        for old_asana in old_asanas:
+            old_asana_index += 1
 
-            if ardha_asana in new_asanas:
+            already_added = False
+            for new_asana in new_asanas:
+                if new_asana["guid"] == old_asana["guid"]:
+                    already_added = True
+                    break
+            if already_added:
                 continue
 
-            new_asanas.append(ardha_asana)
+            new_asanas.append(old_asana)
 
-            if ardha_asana.name[:ardha_prefix_length] != PrimalAsanaGenerator._ARDHA_PREFIX:
+            if old_asana["asana"].name[:ardha_prefix_length] != PrimalAsanaGenerator._ARDHA_PREFIX:
                 continue
 
-            main_asana_name = ardha_asana.name.replace(PrimalAsanaGenerator._ARDHA_PREFIX, "")
+            main_asana_name = old_asana["asana"].name.replace(
+                PrimalAsanaGenerator._ARDHA_PREFIX, "")
+
             main_asana_index = -1
             executable = False
-            for main_asana in section.flow.asanas:
+            for main_asana in new_asanas:
                 main_asana_index += 1
-                if main_asana.name == main_asana_name:
+                if main_asana["asana"].name == main_asana_name:
                     executable = True
                     break
 
             if not executable:
                 continue
 
-            main_asana = section.flow.asanas[main_asana_index]
+            main_asana = old_asanas[main_asana_index]
             new_asanas.append(main_asana)
 
-        section.flow.asanas = new_asanas
+        section.flow.asanas = []
+        for new_asana in new_asanas:
+            section.flow.asanas.append(new_asana["asana"])
