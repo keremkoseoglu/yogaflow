@@ -24,6 +24,14 @@
     "sequence": ["standing", "seated", "lying"]
   },
   {
+    "name": "Home Meditation",
+    "style": "yin",
+    "difficulty": "advanced",
+    "duration": 0,
+    "asana_duration": 1,
+    "sequence": []
+  },
+  {
     "name": "Home Yin",
     "style": "yin",
     "difficulty": "advanced",
