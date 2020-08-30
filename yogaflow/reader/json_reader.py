@@ -102,7 +102,8 @@ class JsonReader(AbstractReader):
             warmup_json = json.load(warmup_file)
         for warmup_line in warmup_json:
             output.append(WarmUp(p_name=warmup_line["name"],
-                                 p_description=warmup_line["description"]))
+                                 p_description=warmup_line["description"],
+                                 p_location=warmup_line["location"]))
         return output
 
     def get_yoga_classes(self) -> List[YogaClass]:

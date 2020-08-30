@@ -102,7 +102,10 @@ class PrimalGenerator(AbstractGenerator): #pylint: disable=R0903
             p_target=self._yoga_class.opening_pranayamas)
 
     def _generate_warmups(self):
+        # Initialize
         self._yoga_class.warmups.clear()
+
+        # Warmup selection
         for warmup_iteration in range(0, 5): #pylint: disable=W0612
             remaining_warmup_count = len(self._warmups)
             if remaining_warmup_count <= 0:
@@ -111,3 +114,14 @@ class PrimalGenerator(AbstractGenerator): #pylint: disable=R0903
             random_warmup = self._warmups[random_warmup_index]
             self._yoga_class.warmups.append(random_warmup)
             self._warmups.remove(random_warmup)
+
+        # Group by location
+        locations = {}
+        for warmup in self._yoga_class.warmups:
+            if warmup.location not in locations:
+                locations[warmup.location] = []
+            locations[warmup.location].append(warmup)
+        self._yoga_class.warmups = []
+        for location in locations:
+            for warmup in locations[location]:
+                self._yoga_class.warmups.append(warmup)
