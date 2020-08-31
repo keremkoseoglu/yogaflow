@@ -34,6 +34,7 @@ class PrimalAsanaGenerator:
     """
 
     _ARDHA_PREFIX = "Ardha "
+    _PARIVRTTA_PREFIX = "Parivrtta "
 
     def __init__(self):
         self._yoga_class = YogaClass()
@@ -102,6 +103,8 @@ class PrimalAsanaGenerator:
                 else:
                     break
             PrimalAsanaGenerator._sort_ardha_before_main(section)
+            PrimalAsanaGenerator._sort_main_before_parivrtta(section)
+            PrimalAsanaGenerator._delete_adjacent_duplicates(section)
             if section.stance == AsanaStance.lying:
                 PrimalAsanaGenerator._sort_section_by_face(section)
                 self._append_asana(section, self._reserved_asanas["Shavasana"])
@@ -290,3 +293,75 @@ class PrimalAsanaGenerator:
         section.flow.asanas = []
         for new_asana in new_asanas:
             section.flow.asanas.append(new_asana["asana"])
+
+    @staticmethod
+    def _sort_main_before_parivrtta(section: AsanaSection):
+        old_asanas = []
+        for asana in section.flow.asanas:
+            guided_asana = {
+                "guid": uuid.uuid1(),
+                "asana": asana
+            }
+            old_asanas.append(guided_asana)
+
+        new_asanas = []
+        parivrtta_prefix_length = len(PrimalAsanaGenerator._PARIVRTTA_PREFIX)
+        old_asana_index = -1
+
+        for old_asana in old_asanas:
+            old_asana_index += 1
+
+            already_added = False
+            for new_asana in new_asanas:
+                if new_asana["guid"] == old_asana["guid"]:
+                    already_added = True
+                    break
+            if already_added:
+                continue
+
+            if old_asana["asana"].name[:parivrtta_prefix_length] != PrimalAsanaGenerator._PARIVRTTA_PREFIX: # pylint: disable=C0301
+                new_asanas.append(old_asana)
+                continue
+
+            main_asana_name = old_asana["asana"].name.replace(
+                PrimalAsanaGenerator._PARIVRTTA_PREFIX, "")
+
+            main_asana_index = -1
+            executable = False
+            for main_asana in new_asanas:
+                main_asana_index += 1
+                if main_asana["asana"].name == main_asana_name:
+                    executable = True
+                    break
+
+            if executable:
+                main_asana = old_asanas[main_asana_index]
+                new_asanas.append(main_asana)
+
+            new_asanas.append(old_asana)
+
+        section.flow.asanas = []
+        for new_asana in new_asanas:
+            section.flow.asanas.append(new_asana["asana"])
+
+    @staticmethod
+    def _delete_adjacent_duplicates(section: AsanaSection):
+        deletable_indices = []
+        index = -1
+
+        for asana in section.flow.asanas:
+            index += 1
+            if index == len(section.flow.asanas)-1:
+                break
+            next_asana = section.flow.asanas[index+1]
+            if asana.name == next_asana.name:
+                deletable_indices.append(index)
+
+        if len(deletable_indices) <= 0:
+            return
+
+        deletable_indices.sort(reverse=True)
+
+        for index in deletable_indices:
+            section.flow.asanas.pop(index)
+   
