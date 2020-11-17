@@ -18,6 +18,34 @@ This is a random yoga flow generator, written in Python.
 python3 -m venv venv
 ```
 
+### Windows
+
+Install dependencies from the command line by typing:
+
+```
+cd yogaflow
+venv\Scripts\activate.bat
+pip install PyQt5
+```
+
+### Mac
+
+If your OS is earlier than Big Sur, install dependencies from the command line by typing:
+
+```
+cd yogaflow
+. venv/bin/activate
+pip install PyQt5
+```
+
+If your OS is Big Sur, install dependencies from the command line by typing:
+
+```
+cd yogaflow
+. venv/bin/activate
+pip install PyQt5==5.13
+```
+
 ## Usage
 
 ### Windows
