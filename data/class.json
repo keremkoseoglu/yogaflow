@@ -8,6 +8,14 @@
     "sequence": ["seated"]
   },
   {
+    "name": "SitIST",
+    "style": "chair",
+    "difficulty": "beginner",
+    "duration": 20,
+    "asana_duration": 2,
+    "sequence": ["seated"]
+  },
+  {
     "name": "Hatha",
     "style": "hatha",
     "difficulty": "beginner",

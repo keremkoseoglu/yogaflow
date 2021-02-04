@@ -60,7 +60,7 @@ python3 main.py
 
 Obviously, you should change the folder name yogaflow with your own installation path. Feel free to create a .bat file including this command for easy startup.
 
-### Mac / Linux
+### Linux
 
 Simply run main.py. You can run main.py from the command line by typing:
 
@@ -71,6 +71,16 @@ python3 main.py
 ```
 
 Obviously, you should change the folder name yogaflow with your own installation path. Feel free to create a .sh file including this command for easy startup.
+
+### Mac
+
+You can follow instructions for Linux.
+
+Additionally; you can create an AppleScript file via Script Editor so you can start YogaFlow with a simple click. Here is how the AppleScript command would look like:
+
+```
+do shell script "cd /Users/kerem/yogaflow; /Users/kerem/yogaflow/venv/bin/python /Users/kerem/yogaflow/main.py"
+```
 
 ## Customization
 
