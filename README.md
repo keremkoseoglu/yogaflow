@@ -46,6 +46,20 @@ cd yogaflow
 pip install PyQt5==5.13
 ```
 
+## Customization
+
+Edit config.json in your installation folder to change your paths and whatnot.
+
+**DATA_DIR_PATH** should point to where you installed YogaFlow.
+
+**DOWNLOAD_DIR** should point to a temporary folder where exported HTML files will be placed.
+
+**SECTION_PERCENTAGE** can be altered to determine how long each section needs to be. Sum of those values should equal to 100.
+
+**CUSTOM_BROWSER** is fully optional. If you leave it blank, your default browser will be used.
+
+You probably won't need to change anything else.
+
 ## Usage
 
 ### Windows
