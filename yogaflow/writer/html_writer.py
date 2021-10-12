@@ -29,7 +29,7 @@ class HtmlWriter(AbstractWriter): #pylint: disable=R0903
 
         self._generate_html()
         self._save_file()
-        self._display_file()
+        self._display_file(self._html_file)
 
     def _asanas(self):
         for flow in self._yoga_class.asanas:
@@ -54,9 +54,6 @@ class HtmlWriter(AbstractWriter): #pylint: disable=R0903
         self._html += "div {margin: auto;} "
         self._html += "</style>"
         self._html += "</head><body><section><div>"
-
-    def _display_file(self):
-        os.system("open " + self._html_file)
 
     def _end_html(self):
         self._html += "</div></section></body></html>"

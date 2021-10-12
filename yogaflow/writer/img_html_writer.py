@@ -56,7 +56,7 @@ class ImgHtmlWriter(AbstractWriter): #pylint: disable=R0903
 
         self._generate_html()
         self._save_file()
-        self._display_file()
+        self._display_file(self._html_file)
 
     def _asanas(self):
         for flow in self._yoga_class.asanas:
@@ -70,9 +70,6 @@ class ImgHtmlWriter(AbstractWriter): #pylint: disable=R0903
     def _begin_html(self):
         self._html = "<html><head>"
         self._html += "</head><body>"
-
-    def _display_file(self):
-        os.system("open " + self._html_file)
 
     def _end_html(self):
         self._html += "</body></html>"
