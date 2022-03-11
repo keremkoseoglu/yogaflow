@@ -1,6 +1,6 @@
 """Main entry point"""
 import os
-from PyQt5.Qt import QApplication
+from PyQt5.QtWidgets import QApplication
 from gui.prime import Prime
 
 APP = QApplication([])
