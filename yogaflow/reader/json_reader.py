@@ -32,11 +32,11 @@ class JsonReader(AbstractReader):
             asana_json = json.load(asana_file)
         for asa in asana_json:
             asana = Asana(
-                p_name=asa["name"],
-                p_difficulty=str_to_asana_difficulty(asa["difficulty"]),
-                p_stance=str_to_asana_stance(asa["stance"]),
-                p_bend_direction=str_to_bend_direction(asa["bend"]),
-                p_face_direction=str_to_face_direction(asa["face"]))
+                name=asa["name"],
+                difficulty=str_to_asana_difficulty(asa["difficulty"]),
+                stance=str_to_asana_stance(asa["stance"]),
+                bend_direction=str_to_bend_direction(asa["bend"]),
+                face_direction=str_to_face_direction(asa["face"]))
             for stance in asa["styles"]:
                 asana.styles.append(YogaStyle(str_to_yoga_style(stance)))
             output.append(asana)
@@ -85,10 +85,10 @@ class JsonReader(AbstractReader):
             pranayama_json = json.load(pranayama_file)
         for cat in pranayama_json:
             for pra in cat["pranayamas"]:
-                pranayama = Pranayama(p_name=pra,
-                                      p_category=cat["category"],
-                                      p_opener=cat["opener"],
-                                      p_closer=cat["closer"])
+                pranayama = Pranayama(name=pra,
+                                      category=cat["category"],
+                                      opener=cat["opener"],
+                                      closer=cat["closer"])
                 output.append(pranayama)
         return output
 
@@ -101,9 +101,9 @@ class JsonReader(AbstractReader):
         with open(path) as warmup_file:
             warmup_json = json.load(warmup_file)
         for warmup_line in warmup_json:
-            output.append(WarmUp(p_name=warmup_line["name"],
-                                 p_description=warmup_line["description"],
-                                 p_location=warmup_line["location"]))
+            output.append(WarmUp(name=warmup_line["name"],
+                                 description=warmup_line["description"],
+                                 location=warmup_line["location"]))
         return output
 
     def get_yoga_classes(self) -> List[YogaClass]:
@@ -115,11 +115,11 @@ class JsonReader(AbstractReader):
         with open(json_file_path) as class_file:
             json_data = json.load(class_file)
         for json_class in json_data:
-            yoga_class = YogaClass(p_style=str_to_yoga_style(json_class["style"]),
-                                   p_difficulty=str_to_asana_difficulty(json_class["difficulty"]),
-                                   p_name=json_class["name"],
-                                   p_duration=json_class["duration"],
-                                   p_asana_duration=json_class["asana_duration"])
+            yoga_class = YogaClass(style=str_to_yoga_style(json_class["style"]),
+                                   difficulty=str_to_asana_difficulty(json_class["difficulty"]),
+                                   name=json_class["name"],
+                                   duration=json_class["duration"],
+                                   asana_duration=json_class["asana_duration"])
             for sequence_name in json_class["sequence"]:
                 stance = str_to_asana_stance(sequence_name)
                 yoga_class.sequence.append(stance)

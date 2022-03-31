@@ -101,9 +101,8 @@ class ImgHtmlWriter(AbstractWriter): #pylint: disable=R0903
             self._html += "<li>" + pranayama.name + "</li>"
 
     def _save_file(self):
-        file2 = open(self._html_file, "w+")
-        file2.write(self._html)
-        file2.close()
+        with open(self._html_file, "w+") as file2:
+            file2.write(self._html)
 
     def _warmups(self):
         for warmup in self._yoga_class.warmups:

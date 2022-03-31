@@ -1,4 +1,5 @@
 """ Asana module """
+from dataclasses import dataclass
 from enum import Enum
 from typing import List
 from yogaflow.yoga.yoga_style import YogaStyle
@@ -95,25 +96,18 @@ def str_to_face_direction(name: str):
         return FaceDirection.up
     return FaceDirection.undefined
 
+@dataclass
 class Asana: #pylint: disable=R0903, R0913
     """ Asana model class
     Data source of this class is by default /data/asana.json
     """
-    def __init__(self,
-                 p_name: str = "Undefined",
-                 p_difficulty: AsanaDifficulty = AsanaDifficulty.undefined,
-                 p_stance: AsanaStance = AsanaStance.undefined,
-                 p_styles: List[YogaStyle] = None,
-                 p_bend_direction: BendDirection = BendDirection.undefined,
-                 p_face_direction: FaceDirection = FaceDirection.undefined):
+    name: str = "Undefined"
+    difficulty: AsanaDifficulty = AsanaDifficulty.undefined
+    stance: AsanaStance = AsanaStance.undefined
+    styles: List[YogaStyle] = None
+    bend_direction: BendDirection = BendDirection.undefined
+    face_direction: FaceDirection = FaceDirection.undefined
 
-        self.name = p_name
-        self.difficulty = p_difficulty
-        self.stance = p_stance
-        self.bend_direction = p_bend_direction
-        self.face_direction = p_face_direction
-
-        if p_styles is None:
+    def __post_init__(self):
+        if self.styles is None:
             self.styles = []
-        else:
-            self.styles = p_styles

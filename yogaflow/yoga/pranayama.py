@@ -1,5 +1,6 @@
 """ Pranayama module """
 from enum import Enum
+from dataclasses import dataclass
 
 
 class PranayamaCategory(Enum):
@@ -21,17 +22,12 @@ class PranayamaLocation(Enum):
     closer = 2
 
 
+@dataclass
 class Pranayama: #pylint: disable=R0903
     """ Pranayama model class
     Data source of this class is by default /data/pranayama.json
     """
-
-    def __init__(self,
-                 p_name="",
-                 p_category=PranayamaCategory.undefined,
-                 p_opener=False,
-                 p_closer=False):
-        self.name = p_name
-        self.category = p_category
-        self.opener = p_opener
-        self.closer = p_closer
+    name: str = ""
+    category: PranayamaCategory = PranayamaCategory.undefined
+    opener: bool = False
+    closer: bool = False
