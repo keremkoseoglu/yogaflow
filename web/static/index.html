@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/yogaflow/yogaflow.css" />
+    <title>YogaFlow</title>
+  </head>
+  <body class="bootstrap-dark">
+    <nav class="navbar navbar-dark bg-dark yf-nav">
+      <span class="navbar-brand mb-0 h1">YogaFlow</span>
+    </nav>
+    <div class="container yf-main-container">
+        <div class="row mb-3">
+            <div class="col-md-4 themed-grid-col"><b>Class</b></div>
+            <div class="col-md-8 themed-grid-col">
+                <select id="yoga_classes">
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4 themed-grid-col"><b>Output</b></div>
+            <div class="col-md-8 themed-grid-col">
+                <select id="outputs">
+                </select>
+            </div>
+        </div>
+    </div>
+
+  <footer class="text-center text-lg-start bg-dark text-muted">
+    <div class="text-center p-4">
+      <div class="row mb-3">
+        <div class="col-md-12 themed-grid-col">
+          <button type="button" class="btn btn-primary" onclick="edit_files()">Edit</button>
+          &nbsp;
+          <button type="button" class="btn btn-primary" onclick="generate()">Generate</button></div>
+      </div>
+    </div>
+  </footer>
+    
+    <script src="/static/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/static/popper/popper.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/yogaflow/index.js"></script>
+  </body>
+</html>
