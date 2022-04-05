@@ -25,25 +25,19 @@ Install dependencies from the command line by typing:
 ```
 cd yogaflow
 venv\Scripts\activate.bat
-pip install PyQt5
+pip install flask
+pip install pywebview
 ```
 
 ### Mac
 
-If your OS is earlier than Big Sur, install dependencies from the command line by typing:
+Install dependencies from the command line by typing:
 
 ```
 cd yogaflow
 . venv/bin/activate
-pip install PyQt5
-```
-
-If your OS is Big Sur, install dependencies from the command line by typing:
-
-```
-cd yogaflow
-. venv/bin/activate
-pip install PyQt5==5.13
+pip install flask
+pip install pywebview
 ```
 
 ## Customization

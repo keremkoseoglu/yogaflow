@@ -1,0 +1,16 @@
+body {
+    background-color: black;
+    color: white;
+    font-size: 16pt;
+}
+
+.yf-main-container {
+    margin-top: 1%;
+}
+
+.yf-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
