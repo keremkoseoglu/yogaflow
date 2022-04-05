@@ -19,8 +19,8 @@ class AbstractWriter(ABC): #pylint: disable=R0903
         config = get_config()
         if "CUSTOM_BROWSER" in config:
             if config["CUSTOM_BROWSER"] != "":
-                chrome_cmd = "open " + config["CUSTOM_BROWSER"]
-                chrome_cmd += " --args " + file_path
+                chrome_cmd = f"open {config['CUSTOM_BROWSER']}" \
+                             f" --args {file_path}"
                 os.system(chrome_cmd)
                 return
-        os.system("open " + file_path)
+        os.system(f"open {file_path}")
