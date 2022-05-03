@@ -2,7 +2,7 @@
 import copy
 from random import randint
 from typing import List
-from yogaflow.generator.abstract_generator import AbstractGenerator
+from yogaflow.generator import Generator
 from yogaflow.generator.primal_asana_generator import PrimalAsanaGenerator
 from yogaflow.yoga.yoga_class import YogaClass
 from yogaflow.yoga.asana import Asana
@@ -12,7 +12,7 @@ from yogaflow.yoga.meditation import Meditation
 from yogaflow.yoga.warmup import WarmUp
 
 
-class PrimalGenerator(AbstractGenerator): #pylint: disable=R0903
+class PrimalGenerator(Generator): #pylint: disable=R0903
     """ Default yoga flow generator class """
     def __init__(self):
         self._yoga_class = YogaClass()

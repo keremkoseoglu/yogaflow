@@ -1,11 +1,11 @@
 """ Yoga database module """
 from typing import List
-from yogaflow.reader.abstract_reader import AbstractReader
+from yogaflow.reader import Reader
 from yogaflow.yoga import yoga_class
 
 class YogaDatabase:
     """ Yoga database class """
-    def __init__(self, reader: AbstractReader):
+    def __init__(self, reader: Reader):
         self._reader = reader
         self.classes = reader.get_yoga_classes()
         self.pranayamas = reader.get_pranayamas()
