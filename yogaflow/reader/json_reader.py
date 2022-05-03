@@ -2,7 +2,7 @@
 import json
 import os
 from typing import List
-from yogaflow.reader.abstract_reader import AbstractReader
+from yogaflow.reader import Reader
 from yogaflow.yoga.asana import Asana, str_to_asana_difficulty, \
     str_to_asana_stance, str_to_bend_direction, str_to_face_direction
 from yogaflow.yoga.yoga_class import YogaClass
@@ -14,7 +14,7 @@ from yogaflow.yoga.warmup import WarmUp
 from yogaflow import config
 
 
-class JsonReader(AbstractReader):
+class JsonReader(Reader):
     """ JSON data reader class
     Reads data from JSON files.
     Sample JSON files can hopefully be found under /data
