@@ -69,6 +69,9 @@ class ImgHtmlWriter(AbstractWriter): #pylint: disable=R0903
 
     def _begin_html(self):
         self._html = "<html><head>"
+        self._html += "<style>"
+        self._html += "body {background-color: #000000; color: #ffffff}"
+        self._html += "</style>"
         self._html += "</head><body>"
 
     def _end_html(self):
@@ -101,7 +104,7 @@ class ImgHtmlWriter(AbstractWriter): #pylint: disable=R0903
             self._html += "<li>" + pranayama.name + "</li>"
 
     def _save_file(self):
-        with open(self._html_file, "w+") as file2:
+        with open(self._html_file, "w+", encoding="utf-8") as file2:
             file2.write(self._html)
 
     def _warmups(self):
